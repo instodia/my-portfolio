@@ -56,6 +56,7 @@ body {
 .gutter {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
+  scroll-padding-inline: var(--gutter);
 }
 
 /* Film grain — a single fixed layer, cheap and subtle */
@@ -82,6 +83,7 @@ body {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--gutter);
 }
 .rail::-webkit-scrollbar {
   display: none;
