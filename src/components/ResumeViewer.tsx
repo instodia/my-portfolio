@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { certifications, profile, projects } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
+import PdfCanvasViewer from './PdfCanvasViewer';
 
 /** THE FULL STORY — real resume PDF preview plus fullscreen view & download actions. */
 export default function ResumeSection({ onView }: { onView: () => void }) {
@@ -36,10 +37,9 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                 </button>
               </div>
             </div>
-            <iframe
-              src={`${profile.resumePdf}#toolbar=0&navpanes=0`}
-              title="Shivanshu Shukla Resume PDF"
-              className="h-full w-full flex-1 border-0 bg-white"
+            <PdfCanvasViewer
+              url={profile.resumePdf}
+              className="h-full w-full flex-1"
             />
           </div>
         </motion.div>

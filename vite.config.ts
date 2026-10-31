@@ -8,7 +8,11 @@ export default defineConfig({
     target: 'es2020',
     rollupOptions: {
       output: {
-        manualChunks: { motion: ['framer-motion'], react: ['react', 'react-dom'] },
+        manualChunks: {
+          motion: ['framer-motion'],
+          react: ['react', 'react-dom'],
+          pdfjs: ['pdfjs-dist'],
+        },
       },
     },
   },

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollLock } from '../hooks/smoothScroll';
 import { profile } from '../data/portfolio';
 import { EASE } from './fx';
+import PdfCanvasViewer from './PdfCanvasViewer';
 
 /** Full-screen resume modal rendering the real PDF with download support. */
 export default function ResumeModal({ onClose }: { onClose: () => void }) {
@@ -64,10 +65,9 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
         transition={{ duration: 0.35, ease: EASE }}
       >
         <div className="mx-auto flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-xl bg-ink-2 shadow-2xl ring-1 ring-white/10">
-          <iframe
-            src={`${profile.resumePdf}#toolbar=1&navpanes=0`}
-            title="Shivanshu Shukla Resume PDF"
-            className="h-full w-full flex-1 border-0 bg-white"
+          <PdfCanvasViewer
+            url={profile.resumePdf}
+            className="h-full w-full flex-1"
           />
         </div>
       </motion.div>
