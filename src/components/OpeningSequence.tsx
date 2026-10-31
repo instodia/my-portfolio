@@ -147,7 +147,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       <button
         type="button"
         onClick={onDone}
-        className="absolute right-4 top-[calc(7vh+12px)] z-40 rounded-full border border-white/20 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-mist transition hover:border-white/60 hover:text-bone"
+        className="absolute right-4 top-4 z-50 sm:right-8 sm:top-6 flex items-center gap-1.5 rounded-full border border-white/30 bg-black/80 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-bone shadow-[0_4px_24px_rgba(0,0,0,0.8)] backdrop-blur-md transition hover:border-white/60 hover:bg-black hover:text-white active:scale-95"
       >
         SKIP INTRO
       </button>
