@@ -251,8 +251,8 @@ export const skillCategories: SkillCategory[] = [
     title: 'Languages',
     subtitle: 'Core programming languages',
     skills: [
-      { name: 'JavaScript', mono: 'Js', note: 'Primary' },
-      { name: 'TypeScript', mono: 'Ts', note: 'Primary' },
+      { name: 'JavaScript', mono: 'Js' },
+      { name: 'TypeScript', mono: 'Ts' },
       { name: 'Python', mono: 'Py' },
       { name: 'C', mono: 'C' },
     ],
@@ -262,8 +262,8 @@ export const skillCategories: SkillCategory[] = [
     title: 'Web & Frameworks',
     subtitle: 'Modern interfaces & application runtimes',
     skills: [
-      { name: 'Next.js', mono: 'Nx', note: 'App Router' },
-      { name: 'React', mono: 'Re', note: 'React 19' },
+      { name: 'Next.js', mono: 'Nx' },
+      { name: 'React', mono: 'Re' },
       { name: 'Node.js', mono: 'No' },
       { name: 'HTML5', mono: 'H5' },
       { name: 'CSS3', mono: 'C3' },
