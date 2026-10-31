@@ -11,7 +11,7 @@ const item = {
   show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.9, ease: EASE } },
 };
 
-export default function Hero({ onPlay, onResume }: { onPlay: () => void; onResume: () => void; profileId?: ProfileId }) {
+export default function Hero({ onPlay }: { onPlay: () => void; onResume?: () => void; profileId?: ProfileId }) {
   const ref = useRef<HTMLElement>(null);
   const fine = useFinePointer();
   const { scrollTo } = useSmoothScroll();
@@ -153,13 +153,14 @@ export default function Hero({ onPlay, onResume }: { onPlay: () => void; onResum
             </button>
           </Magnetic>
           <Magnetic>
-            <button
-              type="button"
-              onClick={onResume}
+            <a
+              href={profile.resumePdf}
+              target="_blank"
+              rel="noreferrer"
               className="glass flex min-h-12 items-center gap-3 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-8"
             >
-              <span className="text-lg">📄</span> View Resume
-            </button>
+              <span className="text-lg">📄</span> View Resume ↗
+            </a>
           </Magnetic>
           <Magnetic>
             <button

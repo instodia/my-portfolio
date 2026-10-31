@@ -15,7 +15,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
           transition={{ duration: 1.1, ease: EASE }}
           style={{ transformPerspective: 1600 }}
         >
-          <div className="relative flex h-[620px] w-full flex-col overflow-hidden rounded-2xl bg-ink-2 shadow-2xl ring-1 ring-white/10 sm:h-[750px]">
+          <div className="relative flex w-full flex-col overflow-hidden rounded-2xl bg-ink-2 shadow-2xl ring-1 ring-white/10">
             <div className="flex items-center justify-between border-b border-white/10 bg-black/60 px-4 py-2.5 text-xs text-smoke">
               <span className="font-mono">Shivanshu_Resume.pdf</span>
               <div className="flex items-center gap-3">
@@ -36,19 +36,26 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                 </button>
               </div>
             </div>
-            <div className="relative flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-5 bg-[#1f1f27] flex justify-center">
-              <picture className="w-full max-w-2xl shadow-xl rounded-sm overflow-hidden bg-white self-start">
-                <source srcSet={profile.resumeImage} type="image/webp" />
-                <img
-                  src={profile.resumeImagePng}
-                  alt="Shivanshu Shukla Resume Preview"
-                  className="w-full h-auto block select-none cursor-pointer transition hover:opacity-95"
-                  onClick={onView}
-                  loading="lazy"
-                  width={1836}
-                  height={2376}
-                />
-              </picture>
+            <div className="relative p-2.5 sm:p-4 bg-[#1a1a22] flex justify-center items-center">
+              <a
+                href={profile.resumePdf}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full max-w-2xl shadow-xl rounded-sm overflow-hidden bg-white block transition hover:opacity-95"
+                title="Click to open resume PDF in new tab"
+              >
+                <picture className="w-full block">
+                  <source srcSet={profile.resumeImage} type="image/webp" />
+                  <img
+                    src={profile.resumeImagePng}
+                    alt="Shivanshu Shukla Resume Preview"
+                    className="w-full h-auto block select-none"
+                    loading="lazy"
+                    width={1836}
+                    height={2376}
+                  />
+                </picture>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -60,14 +67,15 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Magnetic className="w-full">
-              <button
-                type="button"
+              <a
+                href={profile.resumePdf}
+                target="_blank"
+                rel="noreferrer"
                 data-cursor="view"
-                onClick={onView}
                 className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-bone px-6 text-[15px] font-bold text-ink transition hover:bg-white"
               >
-                ▶ View Resume
-              </button>
+                ▶ View Resume ↗
+              </a>
             </Magnetic>
             <Magnetic className="w-full">
               <a
