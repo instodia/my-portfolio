@@ -11,7 +11,6 @@ export default defineConfig({
         manualChunks: {
           motion: ['framer-motion'],
           react: ['react', 'react-dom'],
-          pdfjs: ['pdfjs-dist'],
         },
       },
     },

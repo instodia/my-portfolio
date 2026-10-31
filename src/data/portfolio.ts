@@ -26,6 +26,8 @@ export const profile = {
     github: 'https://github.com/instodia',
   },
   resumePdf: '/assets/Shivanshu_Resume.pdf',
+  resumeImage: '/assets/resume-preview.webp',
+  resumeImagePng: '/assets/resume-preview.png',
   portrait: {
     src: '/assets/portrait-720.webp',
     srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',

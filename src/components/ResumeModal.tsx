@@ -3,9 +3,8 @@ import { motion } from 'framer-motion';
 import { useScrollLock } from '../hooks/smoothScroll';
 import { profile } from '../data/portfolio';
 import { EASE } from './fx';
-import PdfCanvasViewer from './PdfCanvasViewer';
 
-/** Full-screen resume modal rendering the real PDF with download support. */
+/** Full-screen resume modal rendering high-resolution preview with real PDF download support. */
 export default function ResumeModal({ onClose }: { onClose: () => void }) {
   useScrollLock(true);
 
@@ -35,7 +34,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
             rel="noreferrer"
             className="flex items-center gap-1.5 rounded-md bg-white/5 px-3 py-2 text-xs font-semibold text-mist transition hover:bg-white/10 hover:text-bone"
           >
-            Open in new tab ↗
+            Open PDF ↗
           </a>
           <a
             href={profile.resumePdf}
@@ -64,11 +63,17 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: EASE }}
       >
-        <div className="mx-auto flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-xl bg-ink-2 shadow-2xl ring-1 ring-white/10">
-          <PdfCanvasViewer
-            url={profile.resumePdf}
-            className="h-full w-full flex-1"
-          />
+        <div className="mx-auto flex h-full w-full max-w-4xl flex-col overflow-y-auto overflow-x-hidden rounded-xl bg-[#1f1f27] p-3 sm:p-6 shadow-2xl ring-1 ring-white/10">
+          <picture className="mx-auto w-full max-w-3xl shadow-2xl rounded-sm overflow-hidden bg-white self-start">
+            <source srcSet={profile.resumeImage} type="image/webp" />
+            <img
+              src={profile.resumeImagePng}
+              alt="Shivanshu Shukla Resume"
+              className="w-full h-auto block select-none"
+              width={1836}
+              height={2376}
+            />
+          </picture>
         </div>
       </motion.div>
     </motion.div>

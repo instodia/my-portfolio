@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import { certifications, profile, projects } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
-import PdfCanvasViewer from './PdfCanvasViewer';
 
-/** THE FULL STORY — real resume PDF preview plus fullscreen view & download actions. */
+/** THE FULL STORY — real resume high-res preview plus fullscreen view & PDF download actions. */
 export default function ResumeSection({ onView }: { onView: () => void }) {
   return (
     <>
@@ -26,7 +25,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                   rel="noreferrer"
                   className="font-semibold text-crimson-2 hover:underline"
                 >
-                  Open in new tab ↗
+                  Open PDF ↗
                 </a>
                 <button
                   type="button"
@@ -37,10 +36,20 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                 </button>
               </div>
             </div>
-            <PdfCanvasViewer
-              url={profile.resumePdf}
-              className="h-full w-full flex-1"
-            />
+            <div className="relative flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-5 bg-[#1f1f27] flex justify-center">
+              <picture className="w-full max-w-2xl shadow-xl rounded-sm overflow-hidden bg-white self-start">
+                <source srcSet={profile.resumeImage} type="image/webp" />
+                <img
+                  src={profile.resumeImagePng}
+                  alt="Shivanshu Shukla Resume Preview"
+                  className="w-full h-auto block select-none cursor-pointer transition hover:opacity-95"
+                  onClick={onView}
+                  loading="lazy"
+                  width={1836}
+                  height={2376}
+                />
+              </picture>
+            </div>
           </div>
         </motion.div>
 
