@@ -181,7 +181,6 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                       <ProjectArt project={p} />
                     </div>
                     <div className="absolute inset-x-0 bottom-0 p-4">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-mist">{p.genre}</p>
                       <p className="font-display text-3xl leading-none tracking-wide text-bone">{p.title}</p>
                     </div>
                   </button>

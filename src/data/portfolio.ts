@@ -81,7 +81,7 @@ export type Project = {
   id: string;
   title: string;
   year: string;
-  genre: string;
+  genre?: string;
   logline: string;
   stack: string[];
   build: string[];
@@ -97,7 +97,6 @@ export const projects: Project[] = [
     id: 'fastreply-insta-automation',
     title: 'Insta DM Automation',
     year: '2026',
-    genre: 'Full-Stack • Meta Graph API • Real-Time Delivery',
     logline: 'Comment-to-DM platform built on Meta Graph APIs with webhooks and multi-account workspaces.',
     stack: ['Next.js 16', 'TypeScript 5', 'PostgreSQL', 'Prisma 7', 'Meta Graph API v25.0'],
     build: [
@@ -127,7 +126,6 @@ export const projects: Project[] = [
     id: 'college-erp',
     title: 'College ERP System',
     year: '2025',
-    genre: 'Full-Stack • Campus Systems • Operations',
     logline: 'Central campus operations layer for student records, attendance, and role-aware administrative workflows.',
     stack: ['JavaScript', 'Node.js', 'Express', 'MongoDB', 'HTML5', 'CSS3'],
     build: [
@@ -155,7 +153,6 @@ export const projects: Project[] = [
     id: 'smart-attendance-system',
     title: 'Smart Attendance System',
     year: '2025',
-    genre: 'Full-Stack • Digital Verification • Data Analytics',
     logline: 'Structured digital attendance capture and reporting system designed to sit alongside campus ERP workflows.',
     stack: ['JavaScript', 'Node.js', 'Express', 'MongoDB', 'HTML5', 'CSS3'],
     build: [
